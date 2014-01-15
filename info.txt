@@ -1,0 +1,56 @@
+I. Pupils Personal Data
+Name
+Grade and Section
+Nickname
+1.Place of Birth
+Date of Birth
+Age
+2. Guardian
+Nationality
+Religion
+3. Relationship
+Address
+Tel No:
+4. Date of Admission
+Gr & Sec
+Date Presented
+
+II. Family Data
+1. Father's Name
+Date of Birth
+Place of Birth
+Educational Attainment
+Nationality
+Occupation
+2. Mother's Name
+Date of Birth
+Place of Birth
+Educational Attainment
+Nationality
+Occupation
+3. Number of Children Boys:
+Girls 
+Total No. of Children
+4. Civil Status
+Family Economic Status
+Langauge or Dialect used at Home
+Address
+House Owned 
+Total
+
+LRN
+Last_Name
+First_Name
+Middle_Name
+Nick_Name
+Place_Of_Birth
+Date_Of_Birth
+Nationality
+Religion
+Address
+Mobile_Number
+Number_Of_Boys
+Number_Of_Girls
+Total_Number_Of_Children
+
+

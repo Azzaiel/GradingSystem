@@ -1,0 +1,31 @@
+mam eto po
+1. sabe po mam kung may backup daw po dapat my recovery mam
+2.dapat daw po encryption sa (password) po mam - ?
+9. security, limitation of password mam
+13. forget passwrd daw po dapat mam may hint mam
+
+
+
+12.9
+23.33
+30
+30
+
+3. dapat daw po sa pag encode mam ng grades 2 digits lang po.. ex po 40 items dapat po pag lumampas sa 40 ang ininput na grade di po sxa ma encode. - done
+5. help daw po mam dapat daw po un ung sa user-manual daw po - done
+6. ung help daw po dapat about un mam.. mali daw po .. pati symbol mam - done
+7. serch is possible daw po sa lhat mam di lang po firstname,id no. - done
+8.background is not white daw po mam - done
+11. status daw po mam ung mga options po kulang mam ,, kase mam nakalagay po dun enrolled,failled, dropped,, wala pong not enrolled mam - done
+12. ! ganito po ung simbol na di daw po tama - done
+14. encode grades limitation kung san naka set - done
+15. all records display to view report  -done
+16. section settings( disable po ung sa subject name mam. -done
+17.ung sa add dn po ng teacher mam ng debug - done
+10. sa add po ng dedebug mam - done
+
+mam yan po ung dag2 namin dun sa una naming pinaparevise paaus po nlng mam
+4. error trapping daw po sa lahat mam kase po kanina po tinry ,, nalalgyan po nila ng no. tyka di po natigil o ng stop sa pag input
+
+ALTER TABLE teachers AUTO_INCREMENT =1
+SELECT LEFT(ID,4) FROM students WHERE LEFT(ID,4)= '" & yr & "' ORDER BY DESC LIMIT 1
