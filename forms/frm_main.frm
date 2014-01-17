@@ -336,6 +336,9 @@ Begin VB.Form frm_main
    End
    Begin VB.Menu sub_sy_acad 
       Caption         =   "Academic Level"
+      Begin VB.Menu mnSubject 
+         Caption         =   "Subject"
+      End
       Begin VB.Menu sub_addLevel 
          Caption         =   "Level"
       End
@@ -562,6 +565,10 @@ Private Sub mission_Click()
     frm_mission.frame_mission.Visible = True
     frm_mission.frame_vision.Visible = False
     Call load_form(frm_mission, True)
+End Sub
+
+Private Sub mnSubject_Click()
+ Call load_form(frm_subject_crud, True)
 End Sub
 
 Private Sub restore_Click()

@@ -618,7 +618,7 @@ Public Sub cmb_section_Change()
         public_rs.MoveNext
     Wend
     txt_subj_name.Text = ""
-    Call set_datagrid(dg_Students, rs_students, _
+    Call set_datagrid(dg_students, rs_students, _
                                         "SELECT " _
                                             & "a.ID as ID, " _
                                             & "CONCAT(a.Fname,' ', a.Lname) as Student_Name, b.Level as Level, b.Section as Section " _
@@ -678,7 +678,7 @@ Public Sub cmb_section_Click()
         public_rs.MoveNext
     Wend
     txt_subj_name.Text = ""
-    Call set_datagrid(dg_Students, rs_students, _
+    Call set_datagrid(dg_students, rs_students, _
                                         "SELECT " _
                                             & "a.ID as ID, " _
                                             & "CONCAT(a.Fname,' ', a.Lname) as Student_Name, b.Level as Level, b.Section as Section " _
