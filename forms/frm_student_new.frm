@@ -330,8 +330,6 @@ Begin VB.Form frm_student_new
       Width           =   6495
    End
    Begin VB.TextBox txt_id 
-      BackColor       =   &H80000000&
-      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -435,7 +433,7 @@ Begin VB.Form frm_student_new
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "yyyy/mm/dd"
-      Format          =   3604481
+      Format          =   104923137
       CurrentDate     =   41484
    End
    Begin VB.Label Label26 

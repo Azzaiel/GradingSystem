@@ -70,8 +70,6 @@ Begin VB.Form frm_teachers_form_new
       Width           =   3375
    End
    Begin VB.TextBox txt_id 
-      BackColor       =   &H80000000&
-      Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
