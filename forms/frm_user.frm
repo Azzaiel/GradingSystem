@@ -843,7 +843,7 @@ Private Sub Command1_Click()
          res = MsgBox("Are you sure you want to reset the password?", vbYesNo, "Add Account")
                     If res = vbNo Then
                         Exit Sub
-                    Else
+                    End If
      Call mysql_select(public_rs, "SELECT * FROM users WHERE user_name = '" & txt_username.Text & "'")
      public_rs!user_password = public_rs!lname
      public_rs.Update

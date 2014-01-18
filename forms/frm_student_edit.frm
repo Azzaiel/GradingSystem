@@ -453,7 +453,7 @@ Begin VB.Form frm_student_edit
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "yyyy/mm/dd"
-      Format          =   6815745
+      Format          =   107479041
       CurrentDate     =   41484
    End
    Begin VB.Label Label23 
