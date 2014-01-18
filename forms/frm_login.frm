@@ -211,11 +211,11 @@ Private Sub login()
         End If
         
         If (school_year = vbNullString) Then
-        If Month(Now) <= 4 Then
-             school_year = Left(Format(Date, "yyyy"), 3) & Trim(Str(val(Right(Format(Date, "yyyy"), 1) - 1)) & "-" & Format(Date, "yyyy"))
-        Else
-            school_year = Format(Date, "yyyy") & "-" & Left(Format(Date, "yyyy"), 3) & Trim(Str(val(Right(Format(Date, "yyyy"), 1) + 1)))
-        End If
+          If Month(Now) <= 4 Then
+               school_year = Left(Format(Date, "yyyy"), 3) & Trim(Str(val(Right(Format(Date, "yyyy"), 1) - 1)) & "-" & Format(Date, "yyyy"))
+          Else
+              school_year = Format(Date, "yyyy") & "-" & Left(Format(Date, "yyyy"), 3) & Trim(Str(val(Right(Format(Date, "yyyy"), 1) + 1)))
+          End If
         End If
         
         frm_main.lbl_user.Caption = user_name

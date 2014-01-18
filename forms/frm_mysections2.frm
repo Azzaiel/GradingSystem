@@ -268,8 +268,9 @@ If rs_section.RecordCount <> 0 Then
     Call mysql_select(public_rs, "SELECT * FROM users WHERE user_name = '" & frm_main.lbl_user.Caption & "'")
     dr_grade_teacher.Sections(2).Controls("lbl_teacher").Caption = public_rs.Fields("Fname") & " " & public_rs.Fields("Lname")
     
-    Call mysql_select(public_rs, "SELECT @index := @index + 1 as No, masterlist.* FROM (SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, c.Grade, c.Remark FROM students a LEFT JOIN for_student  b ON a.ID = b.ID LEFT JOIN tbl_grade_final c ON b.ID  = c.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND b.Level='" & level & "' AND c.Subject = '" & sub_name & "' AND c.Period = '" & cmb_period.Text & "' ORDER BY Lname ASC) masterlist JOIN (SELECT @index :=0)d")
-      Set dr_grade_teacher.DataSource = public_rs
+    Call mysql_select(public_rs, "SELECT @index := @index + 1 as No, masterlist.* FROM (SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, c.Grade, c.Remark FROM students a LEFT JOIN for_student  b ON a.ID = b.ID LEFT JOIN tbl_grade_final c ON b.ID  = c.ID and c.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND b.Level='" & level & "' AND c.Subject = '" & sub_name & "' AND c.Period = '" & cmb_period.Text & "' ORDER BY Lname ASC) masterlist JOIN (SELECT @index :=0)d")
+    
+    Set dr_grade_teacher.DataSource = public_rs
     dr_grade_teacher.Show vbModal, Me
     Else
         MsgBox "Please select a period first."
