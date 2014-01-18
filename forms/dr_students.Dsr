@@ -11,7 +11,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
    _ExtentY        =   15769
    _Version        =   393216
    _DesignerVersion=   100684101
-   ReportWidth     =   9105
+   ReportWidth     =   9315
    BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
       Name            =   "Arial"
       Size            =   8.25
@@ -184,8 +184,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
       BeginProperty Item1 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txt_lastname"
-         Object.Left            =   6624
-         Object.Top             =   720
+         Object.Left            =   2160
+         Object.Top             =   1584
          Object.Width           =   2310
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -242,8 +242,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
       BeginProperty Item3 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "txt_middlename"
-         Object.Left            =   6624
-         Object.Top             =   1008
+         Object.Left            =   2160
+         Object.Top             =   1296
          Object.Width           =   2310
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -289,8 +289,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
       BeginProperty Item5 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label4"
-         Object.Left            =   4608
-         Object.Top             =   720
+         Object.Top             =   1584
          Object.Width           =   2010
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -326,8 +325,7 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
       BeginProperty Item7 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label6"
-         Object.Left            =   4608
-         Object.Top             =   1008
+         Object.Top             =   1296
          Object.Width           =   2010
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -341,55 +339,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Middle Name:"
       EndProperty
-      ItemType8       =   4
-      BeginProperty Item8 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Text1"
-         Object.Left            =   2160
-         Object.Top             =   1296
-         Object.Width           =   2010
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         DataField       =   "Nickname"
-         CanGrow         =   -1  'True
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   1033
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      ItemType9       =   3
-      BeginProperty Item9 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
-         _Version        =   393216
-         Name            =   "Label8"
-         Object.Top             =   1296
-         Object.Width           =   2160
-         Object.Height          =   285
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Arial"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Object.Caption         =   "Nickname:"
-      EndProperty
-      ItemType10      =   3
-      BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType8       =   3
+      BeginProperty Item8 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label9"
          Object.Left            =   3024
@@ -407,8 +358,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Student's Personal Data"
       EndProperty
-      ItemType11      =   4
-      BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType9       =   4
+      BeginProperty Item9 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text2"
          Object.Left            =   6624
@@ -436,8 +387,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType12      =   3
-      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType10      =   3
+      BeginProperty Item10 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label10"
          Object.Left            =   4608
@@ -455,12 +406,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Place Of Birth:"
       EndProperty
-      ItemType13      =   4
-      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType11      =   4
+      BeginProperty Item11 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text3"
-         Object.Left            =   2160
-         Object.Top             =   1584
+         Object.Left            =   6768
+         Object.Top             =   720
          Object.Width           =   2010
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -484,11 +435,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType14      =   3
-      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType12      =   3
+      BeginProperty Item12 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label11"
-         Object.Top             =   1584
+         Object.Left            =   4608
+         Object.Top             =   720
          Object.Width           =   2160
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -502,8 +454,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Date Of Birth:"
       EndProperty
-      ItemType15      =   4
-      BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType13      =   4
+      BeginProperty Item13 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text4"
          Object.Left            =   6624
@@ -531,8 +483,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType16      =   3
-      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType14      =   3
+      BeginProperty Item14 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label12"
          Object.Left            =   4608
@@ -550,12 +502,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Age:"
       EndProperty
-      ItemType17      =   4
-      BeginProperty Item17 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType15      =   4
+      BeginProperty Item15 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text5"
          Object.Left            =   2160
-         Object.Top             =   1872
+         Object.Top             =   2160
          Object.Width           =   2010
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -579,11 +531,11 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType18      =   3
-      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType16      =   3
+      BeginProperty Item16 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label13"
-         Object.Top             =   1872
+         Object.Top             =   2160
          Object.Width           =   2160
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -597,8 +549,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Nationality:"
       EndProperty
-      ItemType19      =   4
-      BeginProperty Item19 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType17      =   4
+      BeginProperty Item17 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text6"
          Object.Left            =   6624
@@ -626,8 +578,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType20      =   3
-      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType18      =   3
+      BeginProperty Item18 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label14"
          Object.Left            =   4608
@@ -645,12 +597,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Religion:"
       EndProperty
-      ItemType21      =   4
-      BeginProperty Item21 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType19      =   4
+      BeginProperty Item19 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text7"
-         Object.Left            =   2160
-         Object.Top             =   2160
+         Object.Left            =   6768
+         Object.Top             =   1008
          Object.Width           =   2010
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -674,11 +626,12 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType22      =   3
-      BeginProperty Item22 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType20      =   3
+      BeginProperty Item20 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label15"
-         Object.Top             =   2160
+         Object.Left            =   4608
+         Object.Top             =   1008
          Object.Width           =   2160
          Object.Height          =   285
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -692,8 +645,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Address:"
       EndProperty
-      ItemType23      =   4
-      BeginProperty Item23 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType21      =   4
+      BeginProperty Item21 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text8"
          Object.Left            =   6624
@@ -721,8 +674,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType24      =   3
-      BeginProperty Item24 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType22      =   3
+      BeginProperty Item22 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label16"
          Object.Left            =   4608
@@ -740,8 +693,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Mobile Number:"
       EndProperty
-      ItemType25      =   3
-      BeginProperty Item25 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType23      =   3
+      BeginProperty Item23 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label17"
          Object.Left            =   2880
@@ -760,8 +713,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          Object.Caption         =   "Family's Data"
          Alignment       =   2
       EndProperty
-      ItemType26      =   4
-      BeginProperty Item26 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType24      =   4
+      BeginProperty Item24 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text9"
          Object.Left            =   2160
@@ -789,8 +742,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType27      =   3
-      BeginProperty Item27 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType25      =   3
+      BeginProperty Item25 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label18"
          Object.Top             =   3168
@@ -807,8 +760,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Father's Name:"
       EndProperty
-      ItemType28      =   4
-      BeginProperty Item28 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType26      =   4
+      BeginProperty Item26 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text10"
          Object.Left            =   6624
@@ -836,8 +789,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType29      =   3
-      BeginProperty Item29 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType27      =   3
+      BeginProperty Item27 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label19"
          Object.Left            =   4608
@@ -855,8 +808,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Occupation:"
       EndProperty
-      ItemType30      =   4
-      BeginProperty Item30 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType28      =   4
+      BeginProperty Item28 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text11"
          Object.Left            =   2160
@@ -884,8 +837,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType31      =   3
-      BeginProperty Item31 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType29      =   3
+      BeginProperty Item29 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label20"
          Object.Top             =   3456
@@ -902,8 +855,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Mobile Number:"
       EndProperty
-      ItemType32      =   4
-      BeginProperty Item32 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType30      =   4
+      BeginProperty Item30 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text12"
          Object.Left            =   2160
@@ -931,8 +884,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType33      =   3
-      BeginProperty Item33 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType31      =   3
+      BeginProperty Item31 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label21"
          Object.Top             =   3888
@@ -949,8 +902,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Mother's Name:"
       EndProperty
-      ItemType34      =   4
-      BeginProperty Item34 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType32      =   4
+      BeginProperty Item32 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text13"
          Object.Left            =   6624
@@ -978,8 +931,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType35      =   3
-      BeginProperty Item35 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType33      =   3
+      BeginProperty Item33 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label22"
          Object.Left            =   4608
@@ -997,8 +950,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Occupation:"
       EndProperty
-      ItemType36      =   4
-      BeginProperty Item36 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType34      =   4
+      BeginProperty Item34 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text14"
          Object.Left            =   2160
@@ -1026,8 +979,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType37      =   3
-      BeginProperty Item37 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType35      =   3
+      BeginProperty Item35 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label23"
          Object.Top             =   4176
@@ -1044,8 +997,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Mobile Number:"
       EndProperty
-      ItemType38      =   4
-      BeginProperty Item38 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType36      =   4
+      BeginProperty Item36 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text15"
          Object.Left            =   2160
@@ -1073,8 +1026,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType39      =   3
-      BeginProperty Item39 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType37      =   3
+      BeginProperty Item37 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label24"
          Object.Top             =   4608
@@ -1091,8 +1044,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Guardian's Name:"
       EndProperty
-      ItemType40      =   4
-      BeginProperty Item40 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType38      =   4
+      BeginProperty Item38 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text16"
          Object.Left            =   6624
@@ -1120,8 +1073,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType41      =   3
-      BeginProperty Item41 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType39      =   3
+      BeginProperty Item39 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label25"
          Object.Left            =   4608
@@ -1139,8 +1092,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Relationship:"
       EndProperty
-      ItemType42      =   4
-      BeginProperty Item42 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType40      =   4
+      BeginProperty Item40 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Text17"
          Object.Left            =   2160
@@ -1168,8 +1121,8 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
             SubFormatType   =   0
          EndProperty
       EndProperty
-      ItemType43      =   3
-      BeginProperty Item43 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType41      =   3
+      BeginProperty Item41 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Label26"
          Object.Top             =   4896
@@ -1186,12 +1139,59 @@ Begin {78E93846-85FD-11D0-8487-00A0C90DC8A9} dr_students
          EndProperty
          Object.Caption         =   "Mobile Number:"
       EndProperty
-      ItemType44      =   5
-      BeginProperty Item44 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
+      ItemType42      =   5
+      BeginProperty Item42 {1C13A8E3-A0B6-11D0-848E-00A0C90DC8A9} 
          _Version        =   393216
          Name            =   "Line1"
          Object.Top             =   5328
          Object.Width           =   9075
+      EndProperty
+      ItemType43      =   4
+      BeginProperty Item43 {1C13A8E2-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "txt_gender"
+         Object.Left            =   2160
+         Object.Top             =   1872
+         Object.Width           =   2310
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         DataField       =   "Gender"
+         CanGrow         =   -1  'True
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1033
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      ItemType44      =   3
+      BeginProperty Item44 {1C13A8E1-A0B6-11D0-848E-00A0C90DC8A9} 
+         _Version        =   393216
+         Name            =   "Label8"
+         Object.Top             =   1872
+         Object.Width           =   2010
+         Object.Height          =   285
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Object.Caption         =   "Gender"
       EndProperty
    EndProperty
    SectionCode3    =   7

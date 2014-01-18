@@ -244,7 +244,7 @@ Private Sub cmb_filter_Click()
                     & "Guardian_Name as Guardian, " _
                     & "Guardian_Rel as Relationship, " _
                     & "Guardian_Contact as Guardian_Contact, " _
-                     & "Number_Of_Girls, Number_Of_Boys, Number_Of_Boys, Total_Number_Of_Children " _
+                     & "Number_Of_Girls, Number_Of_Boys, Number_Of_Boys, Total_Number_Of_Children, Gender " _
                 & "FROM " _
                     & "students WHERE ID LIKE '%" & txt_search.Text & "%' OR Lname LIKE '%" & txt_search.Text & "%' OR Fname LIKE '%" & txt_search.Text & "%' ORDER BY Fname ASC "
     Call set_datagrid(dg_Students, rs_students, sql_string)
@@ -271,7 +271,7 @@ Private Sub cmb_filter_Click()
                     & "Guardian_Name as Guardian, " _
                     & "Guardian_Rel as Relationship, " _
                     & "Guardian_Contact as Guardian_Contact, " _
-                     & "Number_Of_Girls, Number_Of_Boys, Number_Of_Boys, Total_Number_Of_Children " _
+                     & "Number_Of_Girls, Number_Of_Boys, Number_Of_Boys, Total_Number_Of_Children, Gender " _
                 & "FROM " _
                     & "students WHERE ID LIKE '%" & txt_search.Text & "%' OR Lname LIKE '%" & txt_search.Text & "%' OR Fname LIKE '%" & txt_search.Text & "%' ORDER BY Lname ASC "
     Call set_datagrid(dg_Students, rs_students, sql_string)
@@ -298,7 +298,7 @@ Private Sub cmb_filter_Click()
                     & "Guardian_Name as Guardian, " _
                     & "Guardian_Rel as Relationship, " _
                     & "Guardian_Contact as Guardian_Contact, " _
-                     & "Number_Of_Girls, Number_Of_Boys, Number_Of_Boys, Total_Number_Of_Children " _
+                     & "Number_Of_Girls, Number_Of_Boys, Number_Of_Boys, Total_Number_Of_Children, Gender " _
                 & "FROM " _
                     & "students WHERE ID LIKE '%" & txt_search.Text & "%' OR Lname LIKE '%" & txt_search.Text & "%' OR Fname LIKE '%" & txt_search.Text & "%' ORDER BY ID ASC "
     Call set_datagrid(dg_Students, rs_students, sql_string)
@@ -357,7 +357,7 @@ Private Sub cmd_search_Click()
                     & "Mother_Contact as Mother_Contact, " _
                     & "Guardian_Name as Guardian, " _
                     & "Guardian_Rel as Relationship, " _
-                    & "Guardian_Contact as Guardian_Contact " _
+                    & "Guardian_Contact as Guardian_Contact, Gender " _
                 & "FROM " _
                     & "students WHERE ID = '" & txt_search.Text & "' OR Lname = '" & txt_search.Text & "' OR Fname = '" & txt_search.Text & "'OR Mname = '" & txt_search.Text & "' OR Address = '" & txt_search.Text & "' OR Father_Name = '" & txt_search.Text & "' OR Mother_Name = '" & txt_search.Text & "' OR Guardian_Name ='" & txt_search.Text & "'"
     Call set_datagrid(dg_Students, rs_students, sql_string)
@@ -388,7 +388,7 @@ Public Sub Form_Initialize()
                     & "Mother_Contact as Mother_Contact, " _
                     & "Guardian_Name as Guardian, " _
                     & "Guardian_Rel as Relationship, " _
-                    & "Guardian_Contact as Guardian_Contact " _
+                    & "Guardian_Contact as Guardian_Contact, Gender " _
                 & "FROM " _
                     & "students "
 End Sub
@@ -435,7 +435,8 @@ Private Sub txt_search_KeyUp(KeyCode As Integer, Shift As Integer)
                     & "Mother_Contact as Mother_Contact, " _
                     & "Guardian_Name as Guardian, " _
                     & "Guardian_Rel as Relationship, " _
-                    & "Guardian_Contact as Guardian_Contact " _
+                    & "Guardian_Contact as Guardian_Contact, " _
+                    & "Gender " _
                 & "FROM " _
                     & "students WHERE ID LIKE '%" & txt_search.Text & "%' OR Lname LIKE '%" & txt_search.Text & "%' OR Fname LIKE '%" & txt_search.Text & "%' OR Mname LIKE '%" & txt_search.Text & "%' OR Address LIKE '%" & txt_search.Text & "%'OR Father_Name LIKE '%" & txt_search.Text & "%' OR Mother_Name LIKE '%" & txt_search.Text & "%' OR Guardian_Name LIKE '%" & txt_search.Text & "%'"
     Call set_datagrid(dg_Students, rs_students, sql_string)

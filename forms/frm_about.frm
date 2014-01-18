@@ -4,14 +4,14 @@ Begin VB.Form frm_about
    BackColor       =   &H00400000&
    BorderStyle     =   0  'None
    Caption         =   "Form1"
-   ClientHeight    =   4035
+   ClientHeight    =   4710
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   6180
+   ClientWidth     =   6225
    LinkTopic       =   "Form1"
    Picture         =   "frm_about.frx":0000
-   ScaleHeight     =   4035
-   ScaleWidth      =   6180
+   ScaleHeight     =   4710
+   ScaleWidth      =   6225
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Label Label3 
@@ -30,12 +30,12 @@ Begin VB.Form frm_about
       Height          =   375
       Left            =   4200
       TabIndex        =   4
-      Top             =   3600
-      Width           =   1935
+      Top             =   4200
+      Width           =   2175
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
-      Caption         =   "Developers: Cruz, Lallana, Viernes"
+      Caption         =   "Developers: Cruz Maribeth, Lallana Emberly, and Viernes Yasmine                                                  "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -46,10 +46,10 @@ Begin VB.Form frm_about
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FFFFFF&
-      Height          =   495
+      Height          =   1095
       Left            =   120
       TabIndex        =   3
-      Top             =   3240
+      Top             =   2880
       Width           =   5535
    End
    Begin VB.Label Label1 

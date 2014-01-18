@@ -13,6 +13,24 @@ Begin VB.Form frm_student_new
    ScaleWidth      =   13755
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.ComboBox cm_gender 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   420
+      ItemData        =   "frm_student_new.frx":14EE5
+      Left            =   12000
+      List            =   "frm_student_new.frx":14EEF
+      TabIndex        =   56
+      Top             =   1920
+      Width           =   1335
+   End
    Begin VB.TextBox txt_religion 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -91,7 +109,7 @@ Begin VB.Form frm_student_new
          Strikethrough   =   0   'False
       EndProperty
       Height          =   450
-      Left            =   11520
+      Left            =   9600
       TabIndex        =   44
       Text            =   "0"
       Top             =   1920
@@ -108,9 +126,9 @@ Begin VB.Form frm_student_new
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      ItemData        =   "frm_student_new.frx":14EE5
+      ItemData        =   "frm_student_new.frx":14F01
       Left            =   3720
-      List            =   "frm_student_new.frx":14F04
+      List            =   "frm_student_new.frx":14F20
       TabIndex        =   41
       Top             =   6120
       Width           =   3375
@@ -126,9 +144,9 @@ Begin VB.Form frm_student_new
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      ItemData        =   "frm_student_new.frx":14F4F
+      ItemData        =   "frm_student_new.frx":14F6B
       Left            =   10800
-      List            =   "frm_student_new.frx":14F51
+      List            =   "frm_student_new.frx":14F6D
       Style           =   2  'Dropdown List
       TabIndex        =   38
       Top             =   4440
@@ -145,9 +163,9 @@ Begin VB.Form frm_student_new
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      ItemData        =   "frm_student_new.frx":14F53
+      ItemData        =   "frm_student_new.frx":14F6F
       Left            =   10800
-      List            =   "frm_student_new.frx":14F55
+      List            =   "frm_student_new.frx":14F71
       Style           =   2  'Dropdown List
       TabIndex        =   36
       Top             =   3600
@@ -419,8 +437,8 @@ Begin VB.Form frm_student_new
       Left            =   7200
       TabIndex        =   5
       Top             =   1920
-      Width           =   3375
-      _ExtentX        =   5953
+      Width           =   1695
+      _ExtentX        =   2990
       _ExtentY        =   661
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -433,8 +451,27 @@ Begin VB.Form frm_student_new
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "yyyy/mm/dd"
-      Format          =   104923137
+      Format          =   107216897
       CurrentDate     =   41484
+   End
+   Begin VB.Label Label23 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Gender"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   11040
+      TabIndex        =   55
+      Top             =   2040
+      Width           =   855
    End
    Begin VB.Label Label26 
       Alignment       =   2  'Center
@@ -546,7 +583,7 @@ Begin VB.Form frm_student_new
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   255
-      Left            =   10680
+      Left            =   9120
       TabIndex        =   45
       Top             =   2040
       Width           =   615
@@ -954,7 +991,7 @@ Begin VB.Form frm_student_new
    Begin VB.Image cmd_save 
       Height          =   855
       Left            =   5880
-      Picture         =   "frm_student_new.frx":14F57
+      Picture         =   "frm_student_new.frx":14F73
       Stretch         =   -1  'True
       Top             =   6600
       Width           =   1935
@@ -1087,13 +1124,13 @@ Dim ans As String
         sql_string = "INSERT INTO " _
                         & "students (ID,Lname,Fname,Mname," _
                         & "Nickname,Birthday,ContactNo,Address," _
-                        & "Father_Name,Father_Occ,Father_Contact,Mother_Name,Mother_Occ,Mother_Contact, Guardian_Name, Guardian_Rel, Guardian_Contact,Place_Of_Birth,Nationality,Religion)" _
+                        & "Father_Name,Father_Occ,Father_Contact,Mother_Name,Mother_Occ,Mother_Contact, Guardian_Name, Guardian_Rel, Guardian_Contact,Place_Of_Birth,Nationality,Religion, Gender)" _
                     & " VALUES (" _
                         & "'" & txt_id.Text & "','" & txt_last_name.Text & "','" _
                         & txt_first_name.Text & "','" & txt_middle_name.Text & "','" _
                         & txt_nickname.Text & "','" & Format(dp_birth_date.Value, "yyyy-mm-dd") & "','" _
                         & txt_contact_number.Text & "','" _
-                        & txt_address.Text & "', '" & txt_father_name.Text & "','" & txt_father_occ.Text & "','" & txt_father_no.Text & "','" & txt_mother_name.Text & "','" & txt_mother_occ.Text & "','" & txt_mother_no.Text & "', '" & txt_guardian_name.Text & "','" & cmb_relation.Text & "','" & txt_guardian_no.Text & "', '" & txt_place.Text & "','" & txt_nationality.Text & "','" & txt_religion.Text & "')"
+                        & txt_address.Text & "', '" & txt_father_name.Text & "','" & txt_father_occ.Text & "','" & txt_father_no.Text & "','" & txt_mother_name.Text & "','" & txt_mother_occ.Text & "','" & txt_mother_no.Text & "', '" & txt_guardian_name.Text & "','" & cmb_relation.Text & "','" & txt_guardian_no.Text & "', '" & txt_place.Text & "','" & txt_nationality.Text & "','" & txt_religion.Text & "','" & cm_gender.Text & "')"
         Call mysql_select(frm_teachers.rs_teachers, sql_string)
          sql_string = "INSERT INTO " _
                         & "for_student (ID,SY,Level,Section,Status)" _
