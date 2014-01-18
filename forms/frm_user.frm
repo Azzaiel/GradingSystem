@@ -13,6 +13,23 @@ Begin VB.Form frm_user
    ScaleWidth      =   13665
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.CommandButton Command1 
+      Caption         =   "Reset"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Left            =   11040
+      TabIndex        =   25
+      Top             =   6480
+      Width           =   1455
+   End
    Begin VB.TextBox txt_old 
       Enabled         =   0   'False
       BeginProperty Font 
@@ -320,7 +337,7 @@ Begin VB.Form frm_user
    End
    Begin VB.Image cmd_save 
       Height          =   975
-      Left            =   8400
+      Left            =   7320
       Picture         =   "frm_user.frx":1989E
       Stretch         =   -1  'True
       Top             =   6240
@@ -328,7 +345,7 @@ Begin VB.Form frm_user
    End
    Begin VB.Image cmd_cancel 
       Height          =   975
-      Left            =   10080
+      Left            =   9120
       Picture         =   "frm_user.frx":1BBDA
       Stretch         =   -1  'True
       Top             =   6240
@@ -818,6 +835,20 @@ Private Sub cmd_search_Click()
         If rs_users.RecordCount = 0 Then
             MsgBox "Record not found."
         End If
+End Sub
+
+Private Sub Command1_Click()
+   If (txt_id <> vbNullString) Then
+   Dim res As String
+         res = MsgBox("Are you sure you want to reset the password?", vbYesNo, "Add Account")
+                    If res = vbNo Then
+                        Exit Sub
+                    Else
+     Call mysql_select(public_rs, "SELECT * FROM users WHERE user_name = '" & txt_username.Text & "'")
+     public_rs!user_password = public_rs!lname
+     public_rs.Update
+     MsgBox "Password was reset", vbInformation
+   End If
 End Sub
 
 Private Sub dg_Users_DblClick()
