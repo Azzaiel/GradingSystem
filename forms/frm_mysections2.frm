@@ -453,10 +453,26 @@ FileCheck = Dir$(MyFileName)
     no = 6
     no_g = 3
     ctr = 1
-    Call mysql_select(public_rs, "SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY Lname ASC")
+    Dim curGender As String
+    
+    curGender = vbNullString
+    
+    Call mysql_select(public_rs, "SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, a.Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY a.GENDER desc, Lname ASC")
      While Not public_rs.EOF
+        
+        If (curGender = vbNullString) Then
+           curGender = public_rs!Gender
+           ExcelSheet.Cells(no, 2).Value = curGender
+           no = no + 1
+        ElseIf (curGender <> public_rs!Gender) Then
+           no = no + 1
+           curGender = public_rs!Gender
+           ExcelSheet.Cells(no, 2).Value = curGender
+           no = no + 1
+        End If
+        
         ExcelSheet.Cells(no, 1).Value = ctr
-        ExcelSheet.Cells(no, 2).Value = public_rs.Fields("LRN").Value & " - " & public_rs.Fields("Last_Name").Value & ", " & public_rs.Fields("First_Name").Value
+        ExcelSheet.Cells(no, 2).Value = public_rs.Fields("Last_Name").Value & ", " & public_rs.Fields("First_Name").Value
         
         Call mysql_select(rs_grade, "SELECT * FROM tbl_grade WHERE SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND Level_Name='" & level & "' AND Section = '" & sec_name & "'AND Subject = '" & sub_name & "' AND Period = '" & cmb_period.Text & "' AND ID='" & public_rs.Fields("LRN") & "'")
         If rs_grade.RecordCount <> 0 Then

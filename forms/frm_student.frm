@@ -406,6 +406,7 @@ Else
     dr_students.Sections(2).Controls("lbl_date").Caption = Now
     Set dr_students.DataSource = rs_students
     dr_students.Show vbModal, Me
+    rs_students.MoveFirst
 End If
 End Sub
 

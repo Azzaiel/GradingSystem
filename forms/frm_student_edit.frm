@@ -14,7 +14,7 @@ Begin VB.Form frm_student_edit
    ScaleWidth      =   13680
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
-   Begin VB.ComboBox cmb_status 
+   Begin VB.ComboBox cm_gender 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -26,8 +26,26 @@ Begin VB.Form frm_student_edit
       EndProperty
       Height          =   420
       ItemData        =   "frm_student_edit.frx":14EE5
+      Left            =   12120
+      List            =   "frm_student_edit.frx":14EEF
+      TabIndex        =   55
+      Top             =   2040
+      Width           =   1335
+   End
+   Begin VB.ComboBox cmb_status 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   420
+      ItemData        =   "frm_student_edit.frx":14F01
       Left            =   10680
-      List            =   "frm_student_edit.frx":14EF5
+      List            =   "frm_student_edit.frx":14F11
       Style           =   2  'Dropdown List
       TabIndex        =   54
       Top             =   6240
@@ -352,9 +370,9 @@ Begin VB.Form frm_student_edit
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      ItemData        =   "frm_student_edit.frx":14F22
+      ItemData        =   "frm_student_edit.frx":14F3E
       Left            =   10680
-      List            =   "frm_student_edit.frx":14F24
+      List            =   "frm_student_edit.frx":14F40
       Style           =   2  'Dropdown List
       TabIndex        =   3
       Top             =   3720
@@ -371,9 +389,9 @@ Begin VB.Form frm_student_edit
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      ItemData        =   "frm_student_edit.frx":14F26
+      ItemData        =   "frm_student_edit.frx":14F42
       Left            =   10680
-      List            =   "frm_student_edit.frx":14F28
+      List            =   "frm_student_edit.frx":14F44
       Style           =   2  'Dropdown List
       TabIndex        =   2
       Top             =   4560
@@ -390,9 +408,9 @@ Begin VB.Form frm_student_edit
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      ItemData        =   "frm_student_edit.frx":14F2A
+      ItemData        =   "frm_student_edit.frx":14F46
       Left            =   3600
-      List            =   "frm_student_edit.frx":14F49
+      List            =   "frm_student_edit.frx":14F65
       TabIndex        =   1
       Top             =   6240
       Width           =   3375
@@ -411,7 +429,7 @@ Begin VB.Form frm_student_edit
          Strikethrough   =   0   'False
       EndProperty
       Height          =   450
-      Left            =   11400
+      Left            =   9840
       TabIndex        =   0
       Top             =   2040
       Width           =   1215
@@ -421,8 +439,8 @@ Begin VB.Form frm_student_edit
       Left            =   7080
       TabIndex        =   19
       Top             =   2040
-      Width           =   3375
-      _ExtentX        =   5953
+      Width           =   1695
+      _ExtentX        =   2990
       _ExtentY        =   661
       _Version        =   393216
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -435,8 +453,27 @@ Begin VB.Form frm_student_edit
          Strikethrough   =   0   'False
       EndProperty
       CustomFormat    =   "yyyy/mm/dd"
-      Format          =   3604481
+      Format          =   6815745
       CurrentDate     =   41484
+   End
+   Begin VB.Label Label23 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Gender"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   375
+      Left            =   11160
+      TabIndex        =   56
+      Top             =   2160
+      Width           =   855
    End
    Begin VB.Label Label26 
       Alignment       =   2  'Center
@@ -595,7 +632,7 @@ Begin VB.Form frm_student_edit
    Begin VB.Image cmd_save 
       Height          =   735
       Left            =   5880
-      Picture         =   "frm_student_edit.frx":14F94
+      Picture         =   "frm_student_edit.frx":14FB0
       Stretch         =   -1  'True
       Top             =   6840
       Width           =   2055
@@ -1014,7 +1051,7 @@ Begin VB.Form frm_student_edit
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   255
-      Left            =   10560
+      Left            =   9000
       TabIndex        =   20
       Top             =   2160
       Width           =   615
@@ -1078,6 +1115,7 @@ Private Sub cmd_save_Click()
                                 & " = '" & Format(dp_birth_date.Value, "yyyy-mm-dd") & "', Place_Of_Birth ='" & txt_place.Text & "', Nationality='" & txt_nationality.Text & "', Religion='" & txt_religion.Text & "'" _
                                 & ",ContactNo = '" & txt_contact_number.Text _
                                 & "',Address = '" & txt_address.Text & "',Father_Name ='" & txt_father_name.Text & "', Father_Occ='" & txt_father_occ.Text & "', Father_Contact ='" & txt_father_no.Text & "',Mother_Name ='" & txt_mother_name.Text & "',Mother_Occ = '" & txt_mother_occ.Text & "', Mother_Contact ='" & txt_mother_no.Text & "', Guardian_Name = '" & txt_guardian_name.Text & "', Guardian_Rel = '" & cmb_relation.Text & "', Guardian_Contact = '" & txt_guardian_no.Text & "'" _
+                                & " , Gender = '" & cm_gender.Text & "' " _
                             & "WHERE " _
                                 & " ID = '" & txt_id.Text & "'"
                 Call mysql_select(frm_student_edit.rs_student, sql_string)
@@ -1146,6 +1184,7 @@ Private Sub Form_Load()
         txt_place.Text = .rs_students.Fields("Place_Of_Birth").Value
         txt_nationality.Text = .rs_students.Fields("Nationality").Value
         txt_religion.Text = .rs_students.Fields("Religion").Value
+        cm_gender.Text = .rs_students!Gender
         Call mysql_select(public_rs, "SELECT TRUNCATE(FLOOR(((12 * (YEAR(NOW())- YEAR(Birthday))+ (MONTH(NOW())- MONTH( Birthday))) / 12) * 4) / 4 , 2) AS Age From students WHERE ID='" & .rs_students.Fields("ID").Value & "'")
         txt_age.Text = public_rs.Fields("Age")
         
