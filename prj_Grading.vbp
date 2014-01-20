@@ -55,6 +55,7 @@ Form=forms\frm_masterlistall.frm
 Designer=forms\dr_all.Dsr
 Designer=forms\dr_teachers.Dsr
 Form=frm_student_crud.frm
+Form=frm_section_grade.frm
 Startup="frm_login"
 HelpFile=""
 ExeName32="prj_Grading.exe"

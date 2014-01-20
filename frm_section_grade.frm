@@ -1,17 +1,48 @@
 VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
-Begin VB.Form frm_mysections2 
-   BorderStyle     =   0  'None
+Begin VB.Form frm_section_grade 
    Caption         =   "Form1"
-   ClientHeight    =   7665
-   ClientLeft      =   3225
-   ClientTop       =   735
-   ClientWidth     =   9120
+   ClientHeight    =   7245
+   ClientLeft      =   120
+   ClientTop       =   450
+   ClientWidth     =   10245
    LinkTopic       =   "Form1"
-   Picture         =   "frm_mysections2.frx":0000
-   ScaleHeight     =   7665
-   ScaleWidth      =   9120
-   ShowInTaskbar   =   0   'False
+   Picture         =   "frm_section_grade.frx":0000
+   ScaleHeight     =   7245
+   ScaleWidth      =   10245
+   StartUpPosition =   3  'Windows Default
+   Begin VB.ComboBox cmb_level_name 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   420
+      Left            =   1560
+      TabIndex        =   3
+      Top             =   120
+      Width           =   2895
+   End
+   Begin VB.ComboBox cmb_section 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   420
+      Left            =   6120
+      TabIndex        =   2
+      Top             =   120
+      Width           =   2895
+   End
    Begin VB.ComboBox cmb_period 
       BeginProperty Font 
          Name            =   "MS Sans Serif"
@@ -23,37 +54,21 @@ Begin VB.Form frm_mysections2
          Strikethrough   =   0   'False
       EndProperty
       Height          =   420
-      ItemData        =   "frm_mysections2.frx":F992
-      Left            =   3360
-      List            =   "frm_mysections2.frx":F9A5
-      TabIndex        =   5
-      Top             =   1320
-      Width           =   3255
-   End
-   Begin VB.TextBox txt_search 
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   720
+      ItemData        =   "frm_section_grade.frx":127A5
+      Left            =   4320
+      List            =   "frm_section_grade.frx":127B8
       TabIndex        =   0
       Top             =   720
-      Width           =   6615
+      Width           =   3255
    End
    Begin MSDataGridLib.DataGrid dg_sections 
-      Height          =   4575
-      Left            =   480
-      TabIndex        =   1
-      Top             =   1920
+      Height          =   4695
+      Left            =   1080
+      TabIndex        =   6
+      Top             =   1320
       Width           =   8295
       _ExtentX        =   14631
-      _ExtentY        =   8070
+      _ExtentY        =   8281
       _Version        =   393216
       HeadLines       =   1
       RowHeight       =   19
@@ -110,32 +125,13 @@ Begin VB.Form frm_mysections2
          EndProperty
       EndProperty
    End
-   Begin VB.Label Label1 
-      BackStyle       =   0  'Transparent
-      Caption         =   "Period:"
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00FFFFFF&
-      Height          =   375
-      Left            =   2280
-      TabIndex        =   6
-      Top             =   1440
-      Width           =   1335
-   End
-   Begin VB.Image Image2 
-      Height          =   975
-      Left            =   7200
-      Picture         =   "frm_mysections2.frx":F9E4
+   Begin VB.Image cmd_search 
+      Height          =   735
+      Left            =   9240
+      Picture         =   "frm_section_grade.frx":127F7
       Stretch         =   -1  'True
-      Top             =   6600
-      Width           =   1575
+      Top             =   0
+      Width           =   855
    End
    Begin VB.Label lbl_item 
       BackStyle       =   0  'Transparent
@@ -151,14 +147,54 @@ Begin VB.Form frm_mysections2
       EndProperty
       ForeColor       =   &H000000FF&
       Height          =   495
-      Left            =   480
-      TabIndex        =   4
-      Top             =   6960
+      Left            =   3120
+      TabIndex        =   7
+      Top             =   6600
       Width           =   4215
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Search for Section"
+      Caption         =   "Select Level"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   255
+      Left            =   120
+      TabIndex        =   5
+      Top             =   240
+      Width           =   1455
+   End
+   Begin VB.Label Label2 
+      Appearance      =   0  'Flat
+      BackColor       =   &H80000005&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Select Section"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H80000005&
+      Height          =   255
+      Left            =   4560
+      TabIndex        =   4
+      Top             =   240
+      Width           =   1575
+   End
+   Begin VB.Label Label1 
+      BackStyle       =   0  'Transparent
+      Caption         =   "Period"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -169,42 +205,14 @@ Begin VB.Form frm_mysections2
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FFFFFF&
-      Height          =   255
-      Left            =   360
-      TabIndex        =   3
-      Top             =   360
-      Width           =   4935
-   End
-   Begin VB.Label lblClose 
-      BackStyle       =   0  'Transparent
-      Caption         =   "X"
-      BeginProperty Font 
-         Name            =   "Segoe UI"
-         Size            =   18
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ForeColor       =   &H00FFFFFF&
-      Height          =   495
-      Left            =   8760
-      TabIndex        =   2
-      ToolTipText     =   "Close"
-      Top             =   120
-      Width           =   615
-   End
-   Begin VB.Image cmd_search 
-      Height          =   855
-      Left            =   7560
-      Picture         =   "frm_mysections2.frx":1439D
-      Stretch         =   -1  'True
-      Top             =   600
-      Width           =   975
+      Height          =   375
+      Left            =   3360
+      TabIndex        =   1
+      Top             =   840
+      Width           =   1335
    End
 End
-Attribute VB_Name = "frm_mysections2"
+Attribute VB_Name = "frm_section_grade"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -229,58 +237,63 @@ Public rs_4th As New ADODB.Recordset
 Dim remark As String
 Dim average, first, second, third, fourth, ave2, final As Double
 
+Private Sub cmb_level_name_Click()
+  Call mysql_select(public_rs, "SELECT distinct sec_name FROM db_grading.section where Level_name = '" & cmb_level_name.Text & "' ")
+    cmb_section.Clear
+    cmb_section.AddItem ("")
+    While Not public_rs.EOF
+        cmb_section.AddItem (public_rs.Fields("sec_name"))
+        public_rs.MoveNext
+    Wend
+End Sub
+
 Private Sub cmd_search_Click()
-     Call set_datagrid(dg_sections, rs_section, _
-                                        "SELECT " _
-                                            & "sec_name as Section, subj_name as Subject_Name, Level_Name  FROM for_section WHERE (tch_id='" & id & "' AND SY='" & frm_Main_Teacher.lbl_school_year.Caption & "') AND sec_name = '" & txt_search.Text & "' ORDER BY subj_name ASC")
-                                        
-       If rs_section.RecordCount = 0 Then
-            MsgBox "Record not found."
-       End If
+ Call searchSection
 End Sub
 
 Private Sub Form_Load()
-     Call mysql_select(public_rs, "SELECT * FROM users WHERE user_name = '" & frm_Main_Teacher.lbl_user.Caption & "'")
-         id = public_rs.Fields("ID")
-        Call set_datagrid(dg_sections, rs_section, _
-                                        "SELECT " _
-                                            & "sec_name as Section, subj_name as Subject_Name, Level_Name  FROM for_section WHERE tch_id='" & id & "' AND SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' ORDER BY subj_name ASC")
-                                        
-                    
+  Call poploateDropDown
 End Sub
 
-Private Sub Image2_Click()
-If rs_section.RecordCount <> 0 Then
-    If cmb_period.Text <> "" Then
-    Dim sub_name, sec_name, level, myDate As String
-    sub_name = rs_section.Fields("Subject_Name")
-    sec_name = rs_section.Fields("Section")
-    level = rs_section.Fields("Level_Name")
-    dr_grade_teacher.Sections(2).Controls("lbl_school").Caption = school_name
-    dr_grade_teacher.Sections(2).Controls("lbl_date").Caption = Now
-    dr_grade_teacher.Sections(2).Controls("lbl_section").Caption = sec_name
-    dr_grade_teacher.Sections(2).Controls("lbl_sy").Caption = frm_Main_Teacher.lbl_school_year.Caption
-    dr_grade_teacher.Sections(2).Controls("lbl_level").Caption = level
-    dr_grade_teacher.Sections(2).Controls("lbl_subject").Caption = sub_name
-    dr_grade_teacher.Sections(2).Controls("lbl_period").Caption = cmb_period.Text
-    
-    
-    Call mysql_select(public_rs, "SELECT * FROM users WHERE user_name = '" & frm_main.lbl_user.Caption & "'")
-    dr_grade_teacher.Sections(2).Controls("lbl_teacher").Caption = public_rs.Fields("Fname") & " " & public_rs.Fields("Lname")
-    
-    Call mysql_select(public_rs, "SELECT @index := @index + 1 as No, masterlist.* FROM (SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, c.Grade, c.Remark FROM students a LEFT JOIN for_student  b ON a.ID = b.ID LEFT JOIN tbl_grade_final c ON b.ID  = c.ID and c.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND b.Level='" & level & "' AND c.Subject = '" & sub_name & "' AND c.Period = '" & cmb_period.Text & "' ORDER BY Lname ASC) masterlist JOIN (SELECT @index :=0)d")
-    
-    Set dr_grade_teacher.DataSource = public_rs
-    dr_grade_teacher.Show vbModal, Me
-    Else
-        MsgBox "Please select a period first."
-    End If
-Else
-    MsgBox "No record found."
+Private Sub searchSection()
+          
+Dim sqlQuery As String
+
+sqlQuery = "SELECT sec_name as Section, subj_name as Subject_Name, Level_Name " & _
+           "FROM for_section " & _
+           "WHERE SY = '" & frm_Main_Teacher.lbl_school_year.Caption & "' " & _
+           "      AND Level_Name = '" & cmb_level_name.Text & "' " & _
+           "      AND sec_name = '" & cmb_section.Text & "' " & _
+           "ORDER BY subj_name ASC "
+Call set_datagrid(dg_sections, rs_section, sqlQuery)
+
+If (rs_section.RecordCount = 0) Then
+  MsgBox "No Record Found!", vbCritical
 End If
+
+End Sub
+
+Private Sub poploateDropDown()
+    Call mysql_select(public_rs, "SELECT * FROM acad_level")
+    cmb_level_name.Clear
+    cmb_level_name.AddItem ("")
+    While Not public_rs.EOF
+        cmb_level_name.AddItem (public_rs.Fields("Level_Name"))
+        public_rs.MoveNext
+    Wend
+    
+    Call mysql_select(public_rs, "SELECT distinct sec_name FROM db_grading.section")
+    cmb_section.Clear
+    cmb_section.AddItem ("")
+    While Not public_rs.EOF
+        cmb_section.AddItem (public_rs.Fields("sec_name"))
+        public_rs.MoveNext
+    Wend
+    
 End Sub
 
 Private Sub lbl_item_Click()
+
 If rs_section.RecordCount <> 0 Then
    
     Dim sub_name, sec_name, level, myDate As String
@@ -660,16 +673,15 @@ FileCheck = Dir$(MyFileName)
 
    
     Dim no2, no_g2, ctr2 As Integer
-    
     no2 = 6
     no_g2 = 3
     ctr2 = 1
     
     curGender = vbNullString
-    
-    Call mysql_select(public_rs, "SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, a.Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY a.Gender desc, Lname ASC")
-     While Not public_rs.EOF
      
+    Call mysql_select(public_rs, "SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY GENDER desc, Lname ASC")
+     While Not public_rs.EOF
+        
          If (curGender = vbNullString) Then
            curGender = public_rs!Gender
            ExcelSheet.Cells(no2, 2).Value = curGender
@@ -680,10 +692,9 @@ FileCheck = Dir$(MyFileName)
            ExcelSheet.Cells(no2, 2).Value = curGender
            no2 = no2 + 1
         End If
-        
      
         ExcelSheet.Cells(no2, 1).Value = ctr2
-        ExcelSheet.Cells(no2, 2).Value = public_rs.Fields("LRN").Value & " - " & public_rs.Fields("Last_Name").Value & ", " & public_rs.Fields("First_Name").Value
+        ExcelSheet.Cells(no2, 2).Value = public_rs.Fields("Last_Name").Value & ", " & public_rs.Fields("First_Name").Value
      
         ExcelApp.Range("C4").Value = "1st"
         ExcelSheet.Range("C4").Font.Bold = True
@@ -805,16 +816,5 @@ End If
 Else
     MsgBox "No record found."
 End If
-End Sub
 
-Private Sub lblClose_Click()
-    Unload Me
-End Sub
-
-Private Sub txt_search_KeyUp(KeyCode As Integer, Shift As Integer)
-       Call set_datagrid(dg_sections, rs_section, _
-                                        "SELECT " _
-                                            & "sec_name as Section, subj_name as Subject_Name, Level_Name  FROM for_section WHERE (tch_id='" & id & "' AND SY='" & frm_Main_Teacher.lbl_school_year.Caption & "') AND sec_name LIKE '%" & txt_search.Text & "%' ORDER BY subj_name ASC")
-                                        
-                
 End Sub

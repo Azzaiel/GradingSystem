@@ -348,6 +348,9 @@ Begin VB.Form frm_main
       Begin VB.Menu sub_acad_section 
          Caption         =   "Sections"
       End
+      Begin VB.Menu mnGrade 
+         Caption         =   "Grade"
+      End
    End
    Begin VB.Menu menu_teacher 
       Caption         =   "Teacher"
@@ -565,6 +568,10 @@ Private Sub mission_Click()
     frm_mission.frame_mission.Visible = True
     frm_mission.frame_vision.Visible = False
     Call load_form(frm_mission, True)
+End Sub
+
+Private Sub mnGrade_Click()
+ Call load_form(frm_section_grade, True)
 End Sub
 
 Private Sub mnSubject_Click()
