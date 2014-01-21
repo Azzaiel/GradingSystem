@@ -458,7 +458,7 @@ FileCheck = Dir$(MyFileName)
     
     curGender = vbNullString
     
-    Call mysql_select(public_rs, "SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, a.Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY a.GENDER desc, Lname ASC")
+    Call mysql_select(public_rs, "SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, a.Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY a.GENDER desc, Lname ASC")
      While Not public_rs.EOF
         
         If (curGender = vbNullString) Then
@@ -582,7 +582,7 @@ FileCheck = Dir$(MyFileName)
             If average >= 90 Then
               ExcelSheet.Cells(no, 57).Value = "A"
               ElseIf average >= 85 Then
-              ExcelSheet.Cells(no, 57).Value "P"
+              ExcelSheet.Cells(no, 57).Value = "P"
               ElseIf average >= 80 Then
                   ExcelSheet.Cells(no, 57).Value = "AP"
               ElseIf average >= 74 Then
@@ -667,7 +667,7 @@ FileCheck = Dir$(MyFileName)
     
     curGender = vbNullString
     
-    Call mysql_select(public_rs, "SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, a.Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY a.Gender desc, Lname ASC")
+    Call mysql_select(public_rs, "SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, a.Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY a.Gender desc, Lname ASC")
      While Not public_rs.EOF
      
          If (curGender = vbNullString) Then

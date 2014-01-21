@@ -147,9 +147,9 @@ Begin VB.Form frm_section_grade
       EndProperty
       ForeColor       =   &H000000FF&
       Height          =   495
-      Left            =   3120
+      Left            =   3360
       TabIndex        =   7
-      Top             =   6600
+      Top             =   6240
       Width           =   4215
    End
    Begin VB.Label Label3 
@@ -471,8 +471,9 @@ FileCheck = Dir$(MyFileName)
     
     curGender = vbNullString
     
-    Call mysql_select(public_rs, "SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, a.Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY a.GENDER desc, Lname ASC")
-     While Not public_rs.EOF
+    Call mysql_select(public_rs, "SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, a.Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY a.GENDER desc, Lname ASC")
+     
+       While Not public_rs.EOF
         
         If (curGender = vbNullString) Then
            curGender = public_rs!Gender
@@ -592,17 +593,17 @@ FileCheck = Dir$(MyFileName)
             ExcelSheet.Cells(no, 56).Font.Bold = True
             ExcelSheet.Cells(no, 56).Font.ColorIndex = 3
             ExcelApp.Cells(no, 56).HorizontalAlignment = xlCenter
-            If average >= 90 Then
-              ExcelSheet.Cells(no, 57).Value = "A"
+              If average >= 90 Then
+                ExcelSheet.Cells(no, 57).Value = "A"
               ElseIf average >= 85 Then
-              ExcelSheet.Cells(no, 57).Value "P"
+                ExcelSheet.Cells(no, 57).Value = "P"
               ElseIf average >= 80 Then
-                  ExcelSheet.Cells(no, 57).Value = "AP"
+                ExcelSheet.Cells(no, 57).Value = "AP"
               ElseIf average >= 74 Then
-                  ExcelSheet.Cells(no, 57).Value = "D"
+                ExcelSheet.Cells(no, 57).Value = "D"
               Else
-                  ExcelSheet.Cells(no, 57).Value = "B"
-            End If
+                ExcelSheet.Cells(no, 57).Value = "B"
+              End If
             ExcelSheet.Cells(no, 57).Font.Bold = True
             ExcelSheet.Cells(no, 57).Font.ColorIndex = 3
             ExcelApp.Cells(no, 57).HorizontalAlignment = xlCenter
@@ -679,7 +680,7 @@ FileCheck = Dir$(MyFileName)
     
     curGender = vbNullString
      
-    Call mysql_select(public_rs, "SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY GENDER desc, Lname ASC")
+    Call mysql_select(public_rs, "SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, Gender FROM students a LEFT JOIN for_student b ON a.ID   = b.ID WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND Level='" & level & "' ORDER BY GENDER desc, Lname ASC")
      While Not public_rs.EOF
         
          If (curGender = vbNullString) Then
@@ -692,6 +693,8 @@ FileCheck = Dir$(MyFileName)
            ExcelSheet.Cells(no2, 2).Value = curGender
            no2 = no2 + 1
         End If
+        
+
      
         ExcelSheet.Cells(no2, 1).Value = ctr2
         ExcelSheet.Cells(no2, 2).Value = public_rs.Fields("Last_Name").Value & ", " & public_rs.Fields("First_Name").Value
@@ -759,6 +762,7 @@ FileCheck = Dir$(MyFileName)
                     final = val(rs_final.Fields("Grade").Value)
                     remark = rs_final.Fields("Remark").Value
                 End If
+                
                 ave2 = (first + second + third + fourth) / 4
                 ave2 = Round(ave2, 2)
                 ExcelApp.Cells(no2, 7).Value = ave2

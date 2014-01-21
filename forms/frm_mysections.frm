@@ -110,7 +110,7 @@ Begin VB.Form frm_mysections
       Height          =   255
       Left            =   360
       TabIndex        =   4
-      Top             =   5760
+      Top             =   5640
       Width           =   3615
    End
    Begin VB.Image cmd_search 
