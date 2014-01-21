@@ -389,6 +389,7 @@ Begin VB.Form frm_main
       End
       Begin VB.Menu restore 
          Caption         =   "Restore"
+         Visible         =   0   'False
       End
    End
    Begin VB.Menu menu_about 
