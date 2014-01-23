@@ -514,15 +514,15 @@ FileCheck = Dir$(MyFileName)
             
             gk_total = val(rs_grade.Fields("K1").Value) + val(rs_grade.Fields("K2").Value) + val(rs_grade.Fields("K3").Value) + val(rs_grade.Fields("K4").Value) + val(rs_grade.Fields("K5").Value) + val(rs_grade.Fields("K6").Value) + val(rs_grade.Fields("K7").Value) + val(rs_grade.Fields("K8").Value) + val(rs_grade.Fields("K9").Value) + val(rs_grade.Fields("K10").Value)
             ExcelSheet.Cells(no, 13).Value = gk_total
-            ExcelSheet.Cells(no, 13).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 13).Font.ColorIndex = vbBack
             k_ans = gk_total / k_total
             k = k_ans * 100
             k = Round(k, 2)
             ExcelSheet.Cells(no, 14).Value = k
-            ExcelSheet.Cells(no, 14).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 14).Font.ColorIndex = vbBack
             ave_k = k * 0.15
             ExcelSheet.Cells(no, 15).Value = ave_k
-            ExcelSheet.Cells(no, 15).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 15).Font.ColorIndex = vbBack
             
             
             ExcelSheet.Cells(no, 16).Value = rs_grade.Fields("P1").Value
@@ -538,15 +538,15 @@ FileCheck = Dir$(MyFileName)
             
            gp_total = val(rs_grade.Fields("P1").Value) + val(rs_grade.Fields("P2").Value) + val(rs_grade.Fields("P3").Value) + val(rs_grade.Fields("P4").Value) + val(rs_grade.Fields("P5").Value) + val(rs_grade.Fields("P6").Value) + val(rs_grade.Fields("P7").Value) + val(rs_grade.Fields("P8").Value) + val(rs_grade.Fields("P9").Value) + val(rs_grade.Fields("P10").Value)
             ExcelSheet.Cells(no, 26).Value = gp_total
-            ExcelSheet.Cells(no, 26).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 26).Font.ColorIndex = vbBack
             p_ans = gp_total / p_total
             p = p_ans * 100
             p = Round(p, 2)
             ExcelSheet.Cells(no, 27).Value = p
-            ExcelSheet.Cells(no, 27).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 27).Font.ColorIndex = vbBack
             ave_p = p * 0.25
             ExcelSheet.Cells(no, 28).Value = ave_p
-            ExcelSheet.Cells(no, 28).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 28).Font.ColorIndex = vbBack
             
             ExcelSheet.Cells(no, 29).Value = rs_grade.Fields("U1").Value
             ExcelSheet.Cells(no, 30).Value = rs_grade.Fields("U2").Value
@@ -561,15 +561,15 @@ FileCheck = Dir$(MyFileName)
             
             gu_total = val(rs_grade.Fields("U1").Value) + val(rs_grade.Fields("U2").Value) + val(rs_grade.Fields("U3").Value) + val(rs_grade.Fields("U4").Value) + val(rs_grade.Fields("U5").Value) + val(rs_grade.Fields("U6").Value) + val(rs_grade.Fields("U7").Value) + val(rs_grade.Fields("U8").Value) + val(rs_grade.Fields("U9").Value) + val(rs_grade.Fields("U10").Value)
             ExcelSheet.Cells(no, 39).Value = gu_total
-            ExcelSheet.Cells(no, 39).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 39).Font.ColorIndex = vbBack
             u_ans = gu_total / u_total
             u = u_ans * 100
             u = Round(u, 2)
             ExcelSheet.Cells(no, 40).Value = u
-            ExcelSheet.Cells(no, 40).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 40).Font.ColorIndex = vbBack
             ave_u = u * 0.3
             ExcelSheet.Cells(no, 41).Value = ave_u
-            ExcelSheet.Cells(no, 41).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 41).Font.ColorIndex = vbBack
             
             ExcelSheet.Cells(no, 42).Value = rs_grade.Fields("Prod1").Value
             ExcelSheet.Cells(no, 43).Value = rs_grade.Fields("Prod2").Value
@@ -584,24 +584,24 @@ FileCheck = Dir$(MyFileName)
             
             gprod_total = val(rs_grade.Fields("Prod1").Value) + val(rs_grade.Fields("Prod2").Value) + val(rs_grade.Fields("Prod3").Value) + val(rs_grade.Fields("Prod4").Value) + val(rs_grade.Fields("Prod5").Value) + val(rs_grade.Fields("Prod6").Value) + val(rs_grade.Fields("Prod7").Value) + val(rs_grade.Fields("Prod8").Value) + val(rs_grade.Fields("Prod9").Value) + val(rs_grade.Fields("Prod10").Value)
             ExcelSheet.Cells(no, 52).Value = gprod_total
-            ExcelSheet.Cells(no, 52).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 52).Font.ColorIndex = vbBack
             prod_ans = gprod_total / prod_total
             prod = prod_ans * 100
             prod = Round(prod, 2)
             ExcelSheet.Cells(no, 53).Value = prod
-            ExcelSheet.Cells(no, 53).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 53).Font.ColorIndex = vbBack
             ave_prod = prod * 0.3
             ExcelSheet.Cells(no, 54).Value = ave_prod
-            ExcelSheet.Cells(no, 54).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 54).Font.ColorIndex = vbBack
             average = ave_k + ave_p + ave_u + ave_prod
             ExcelSheet.Cells(no, 55).Value = average
             ExcelSheet.Cells(no, 55).Font.Bold = True
-            ExcelSheet.Cells(no, 55).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 55).Font.ColorIndex = vbBack
             ExcelApp.Cells(no, 55).HorizontalAlignment = xlCenter
             average = Round(average, 2)
             ExcelSheet.Cells(no, 56).Value = average
             ExcelSheet.Cells(no, 56).Font.Bold = True
-            ExcelSheet.Cells(no, 56).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 56).Font.ColorIndex = vbBack
             ExcelApp.Cells(no, 56).HorizontalAlignment = xlCenter
             If average >= 90 Then
               ExcelSheet.Cells(no, 57).Value = "A"
@@ -615,7 +615,7 @@ FileCheck = Dir$(MyFileName)
                   ExcelSheet.Cells(no, 57).Value = "B"
             End If
             ExcelSheet.Cells(no, 57).Font.Bold = True
-            ExcelSheet.Cells(no, 57).Font.ColorIndex = 3
+            ExcelSheet.Cells(no, 57).Font.ColorIndex = vbBack
             ExcelApp.Cells(no, 57).HorizontalAlignment = xlCenter
         End If
         no = no + 1
@@ -625,6 +625,7 @@ FileCheck = Dir$(MyFileName)
     
      
   End If
+  ExcelApp.DisplayAlerts = False
   If FileCheck = MyMonth + "_" + MyYear + MyExtension Then
         'Save existing workbook
         ExcelWorkbook.Save
@@ -634,12 +635,13 @@ FileCheck = Dir$(MyFileName)
     End If
 
         'Close Excel
-        ExcelWorkbook.Close savechanges:=False
-        ExcelApp.Quit
+        ExcelApp.Visible = True
+        'ExcelWorkbook.Close savechanges:=False
+        'ExcelApp.Quit
         Set ExcelApp = Nothing
         Set ExcelWorkbook = Nothing
         Set ExcelSheet = Nothing
-    msgbox "Excel file has been exported."
+    'msgbox "Excel file has been exported."
     Else
       On Error Resume Next
 'create Excel object
@@ -789,13 +791,13 @@ FileCheck = Dir$(MyFileName)
                 End If
                 ExcelApp.Cells(no2, 9).Value = remark
                 ExcelSheet.Cells(no2, 7).Font.Bold = True
-                ExcelSheet.Cells(no2, 7).Font.ColorIndex = 3
+                ExcelSheet.Cells(no2, 7).Font.ColorIndex = vbBack
                 ExcelApp.Cells(no2, 7).HorizontalAlignment = xlCenter
                 ExcelSheet.Cells(no2, 8).Font.Bold = True
-                ExcelSheet.Cells(no2, 8).Font.ColorIndex = 3
+                ExcelSheet.Cells(no2, 8).Font.ColorIndex = vbBack
                 ExcelApp.Cells(no2, 8).HorizontalAlignment = xlCenter
                 ExcelSheet.Cells(no2, 9).Font.Bold = True
-                ExcelSheet.Cells(no2, 9).Font.ColorIndex = 3
+                ExcelSheet.Cells(no2, 9).Font.ColorIndex = vbBack
                 ExcelApp.Cells(no2, 9).HorizontalAlignment = xlCenter
        
                
@@ -806,6 +808,7 @@ FileCheck = Dir$(MyFileName)
     
      
   End If
+  ExcelApp.DisplayAlerts = False
   If FileCheck = MyMonth + "_" + MyYear + MyExtension Then
         'Save existing workbook
         ExcelWorkbook.Save
