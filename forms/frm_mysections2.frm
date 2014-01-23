@@ -616,7 +616,7 @@ FileCheck = Dir$(MyFileName)
             End If
             ExcelSheet.Cells(no, 57).Font.Bold = True
             If (ExcelSheet.Cells(no, 57).Value = "B") Then
-               ExcelSheet.Cells(no, 57).Font.ColorIndex = vbRed
+               ExcelSheet.Cells(no, 57).Font.ColorIndex = 3
             Else
               ExcelSheet.Cells(no, 57).Font.ColorIndex = vbBack
             End If
@@ -803,7 +803,7 @@ FileCheck = Dir$(MyFileName)
                 ExcelSheet.Cells(no2, 9).Font.Bold = True
                 
                 If (remark = "B") Then
-                  ExcelSheet.Cells(no2, 9).Font.ColorIndex = vbRed
+                  ExcelSheet.Cells(no2, 9).Font.ColorIndex = 3
                 Else
                   ExcelSheet.Cells(no2, 9).Font.ColorIndex = vbBack
                 End If
