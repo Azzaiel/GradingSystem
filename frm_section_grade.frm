@@ -610,7 +610,11 @@ FileCheck = Dir$(MyFileName)
                 ExcelSheet.Cells(no, 57).Value = "B"
               End If
             ExcelSheet.Cells(no, 57).Font.Bold = True
-            ExcelSheet.Cells(no, 57).Font.ColorIndex = vbBack
+            If (ExcelSheet.Cells(no, 57).Value = "B") Then
+               ExcelSheet.Cells(no, 57).Font.ColorIndex = vbRed
+            Else
+              ExcelSheet.Cells(no, 57).Font.ColorIndex = vbBack
+            End If
             ExcelApp.Cells(no, 57).HorizontalAlignment = xlCenter
         End If
         no = no + 1
@@ -793,7 +797,11 @@ FileCheck = Dir$(MyFileName)
                 ExcelSheet.Cells(no2, 8).Font.ColorIndex = vbBack
                 ExcelApp.Cells(no2, 8).HorizontalAlignment = xlCenter
                 ExcelSheet.Cells(no2, 9).Font.Bold = True
-                ExcelSheet.Cells(no2, 9).Font.ColorIndex = vbBack
+                If (remark = "B") Then
+                  ExcelSheet.Cells(no2, 9).Font.ColorIndex = vbRed
+                Else
+                  ExcelSheet.Cells(no2, 9).Font.ColorIndex = vbBack
+                End If
                 ExcelApp.Cells(no2, 9).HorizontalAlignment = xlCenter
        
                
