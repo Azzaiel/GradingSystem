@@ -815,12 +815,13 @@ FileCheck = Dir$(MyFileName)
     End If
 
         'Close Excel
-        ExcelWorkbook.Close savechanges:=False
-        ExcelApp.Quit
+        ExcelApp.Visible = True
+       ' ExcelWorkbook.Close savechanges:=False
+       ' ExcelApp.Quit
         Set ExcelApp = Nothing
         Set ExcelWorkbook = Nothing
         Set ExcelSheet = Nothing
-    msgbox "Excel file has been exported."
+    'msgbox "Excel file has been exported."
 End If
 Else
     msgbox "Please select period first."

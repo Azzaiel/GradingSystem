@@ -268,7 +268,8 @@ sqlQuery = "SELECT sec_name as Section, subj_name as Subject_Name, Level_Name " 
 Call set_datagrid(dg_sections, rs_section, sqlQuery)
 
 If (rs_section.RecordCount = 0) Then
-  MsgBox "No Record Found!", vbCritical
+  msgbox "No Record Found!", vbCritical
+  
 End If
 
 End Sub
@@ -293,6 +294,10 @@ Private Sub poploateDropDown()
 End Sub
 
 Private Sub lbl_item_Click()
+
+If (rs_section.State = 0) Then
+  Exit Sub
+End If
 
 If rs_section.RecordCount <> 0 Then
    
@@ -624,12 +629,13 @@ FileCheck = Dir$(MyFileName)
     End If
 
         'Close Excel
-        ExcelWorkbook.Close savechanges:=False
-        ExcelApp.Quit
+        'ExcelWorkbook.Close savechanges:=False
+        'ExcelApp.Quit
+        ExcelApp.Visible = True
         Set ExcelApp = Nothing
         Set ExcelWorkbook = Nothing
         Set ExcelSheet = Nothing
-    MsgBox "Excel file has been exported."
+    'msgbox "Excel file has been exported."
     Else
       On Error Resume Next
 'create Excel object
@@ -806,19 +812,20 @@ FileCheck = Dir$(MyFileName)
     End If
 
         'Close Excel
-        ExcelWorkbook.Close savechanges:=False
-        ExcelApp.Quit
+        ExcelApp.Visible = True
+        'ExcelWorkbook.Close savechanges:=False
+        'ExcelApp.Quit
         Set ExcelApp = Nothing
         Set ExcelWorkbook = Nothing
         Set ExcelSheet = Nothing
-    MsgBox "Excel file has been exported."
+    'msgbox "Excel file has been exported."
 End If
 Else
-    MsgBox "Please select period first."
+    msgbox "Please select period first."
 
 End If
 Else
-    MsgBox "No record found."
+    msgbox "No record found."
 End If
 
 End Sub
