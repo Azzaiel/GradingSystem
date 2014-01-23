@@ -235,7 +235,7 @@ Private Sub cmd_search_Click()
                                             & "sec_name as Section, subj_name as Subject_Name, Level_Name  FROM for_section WHERE (tch_id='" & id & "' AND SY='" & frm_Main_Teacher.lbl_school_year.Caption & "') AND sec_name = '" & txt_search.Text & "' ORDER BY subj_name ASC")
                                         
        If rs_section.RecordCount = 0 Then
-            MsgBox "Record not found."
+            msgbox "Record not found."
        End If
 End Sub
 
@@ -253,7 +253,7 @@ Private Sub Image2_Click()
 If rs_section.RecordCount <> 0 Then
     If cmb_period.Text <> "" Then
     Dim sub_name, sec_name, level, myDate As String
-    sub_name = rs_section.Fields("Subject_Name")
+        sub_name = rs_section.Fields("Subject_Name")
     sec_name = rs_section.Fields("Section")
     level = rs_section.Fields("Level_Name")
     dr_grade_teacher.Sections(2).Controls("lbl_school").Caption = school_name
@@ -268,15 +268,39 @@ If rs_section.RecordCount <> 0 Then
     Call mysql_select(public_rs, "SELECT * FROM users WHERE user_name = '" & frm_main.lbl_user.Caption & "'")
     dr_grade_teacher.Sections(2).Controls("lbl_teacher").Caption = public_rs.Fields("Fname") & " " & public_rs.Fields("Lname")
     
-    Call mysql_select(public_rs, "SELECT @index := @index + 1 as No, masterlist.* FROM (SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, c.Grade, c.Remark FROM students a LEFT JOIN for_student  b ON a.ID = b.ID LEFT JOIN tbl_grade_final c ON b.ID  = c.ID and c.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND b.Level='" & level & "' AND c.Subject = '" & sub_name & "' AND c.Period = '" & cmb_period.Text & "' ORDER BY Lname ASC) masterlist JOIN (SELECT @index :=0)d")
+    If (cmb_period.Text = "Final") Then
+      Dim sqlQuery As String
+      sqlQuery = "SELECT @index := @index + 1 as No, masterlist.* FROM ( " & _
+                 "     SELECT a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, ROUND(AVG(Grade), 2) as grade " & _
+                 "            , CASE  " & _
+                 "            WHEN  ROUND(AVG(Grade), 2) >= 90 THEN 'A' " & _
+                 "            WHEN  ROUND(AVG(Grade), 2) > 84 < 90 THEN 'P' " & _
+                 "            WHEN  ROUND(AVG(Grade), 2) > 79 < 85 THEN 'AP' " & _
+                 "            WHEN  ROUND(AVG(Grade), 2) > 73 < 80 THEN 'D' " & _
+                 "            ELSE 'B' " & _
+                 "            END as Remark " & _
+                 "     FROM students a LEFT JOIN for_student  b ON a.ID = b.ID " & _
+                 "          LEFT JOIN tbl_grade_final c ON b.ID  = c.ID and c.SY='" & frm_Main_Teacher.lbl_school_year & "' " & _
+                 "     WHERE b.SY='" & frm_Main_Teacher.lbl_school_year & "' " & _
+                 "           AND b.Section = '" & sec_name & "' " & _
+                 "           AND b.Level = '" & level & "' " & _
+                 "           AND c.Subject = '" & sub_name & "' " & _
+                 "           AND c.Period != 'Final' " & _
+                 "     GROUP BY  a.ID, a.Lname, a.Fname, a.Mname  " & _
+                 "     ORDER BY Lname ASC " & _
+                 "  ) masterlist JOIN (SELECT @index :=0)d"
+      Call mysql_select(public_rs, sqlQuery)
+    Else
+      Call mysql_select(public_rs, "SELECT @index := @index + 1 as No, masterlist.* FROM (SELECT distinct a.ID as LRN, a.Lname as Last_Name, a.Fname as First_Name, a.Mname as Middle_Name, c.Grade, c.Remark FROM students a LEFT JOIN for_student  b ON a.ID = b.ID LEFT JOIN tbl_grade_final c ON b.ID  = c.ID and c.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' WHERE b.SY='" & frm_Main_Teacher.lbl_school_year.Caption & "' AND b.Section = '" & sec_name & "' AND b.Level='" & level & "' AND c.Subject = '" & sub_name & "' AND c.Period = '" & cmb_period.Text & "' ORDER BY Lname ASC) masterlist JOIN (SELECT @index :=0)d")
+    End If
     
     Set dr_grade_teacher.DataSource = public_rs
     dr_grade_teacher.Show vbModal, Me
     Else
-        MsgBox "Please select a period first."
+        msgbox "Please select a period first."
     End If
 Else
-    MsgBox "No record found."
+    msgbox "No record found."
 End If
 End Sub
 
@@ -615,7 +639,7 @@ FileCheck = Dir$(MyFileName)
         Set ExcelApp = Nothing
         Set ExcelWorkbook = Nothing
         Set ExcelSheet = Nothing
-    MsgBox "Excel file has been exported."
+    msgbox "Excel file has been exported."
     Else
       On Error Resume Next
 'create Excel object
@@ -796,14 +820,14 @@ FileCheck = Dir$(MyFileName)
         Set ExcelApp = Nothing
         Set ExcelWorkbook = Nothing
         Set ExcelSheet = Nothing
-    MsgBox "Excel file has been exported."
+    msgbox "Excel file has been exported."
 End If
 Else
-    MsgBox "Please select period first."
+    msgbox "Please select period first."
 
 End If
 Else
-    MsgBox "No record found."
+    msgbox "No record found."
 End If
 End Sub
 

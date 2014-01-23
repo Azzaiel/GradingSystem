@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
 Begin VB.Form frm_main 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Grading System of K to 12"
@@ -12,6 +13,13 @@ Begin VB.Form frm_main
    Picture         =   "frm_main.frx":0000
    ScaleHeight     =   7770
    ScaleWidth      =   14400
+   Begin MSComDlg.CommonDialog dbBackupPath 
+      Left            =   9120
+      Top             =   1320
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+   End
    Begin VB.Timer tmr_Time 
       Interval        =   1000
       Left            =   10200
@@ -598,7 +606,21 @@ End Sub
 Private Sub sub_db_backup_Click()
     Dim my_date As Date
     myDate = Format(Now, "mmmm-dd-yyyy")
-     backup_db (GetShortName(App.Path & "\back-up database") & "\db_grading.sql")
+    
+    dbBackupPath.DialogTitle = "Open File"
+    dbBackupPath.Filter = "*.*"
+    dbBackupPath.FilterIndex = 1
+    dbBackupPath.Flags = cdlOFNAllowMultiselect + cdlOFNExplorer
+    dbBackupPath.Flags = cdlOFNFileMustExist + cdlOFNHideReadOnly
+    dbBackupPath.CancelError = True
+
+    Dim res As String
+    
+    res = dbBackupPath.ShowOpen
+    
+    MsgBox res
+
+     backup_db (GetShortName(dbBackupPath.FileName & "\back-up database") & "\db_grading.sql")
     MsgBox "Database has been copied."
 End Sub
 

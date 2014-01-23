@@ -405,7 +405,7 @@ Private Sub cmb_period_Click()
     Dim sqlQuery As String
         sqlQuery = "SELECT Subject, 'Final' as Period, ROUND(AVG(Grade), 2) as Grade " & _
                    "      , CASE " & _
-                   "        WHEN  ROUND(AVG(Grade), 2) > 90 THEN 'A' " & _
+                   "        WHEN  ROUND(AVG(Grade), 2) >= 90 THEN 'A' " & _
                    "        WHEN  ROUND(AVG(Grade), 2) > 84 < 90 THEN 'P' " & _
                    "        WHEN  ROUND(AVG(Grade), 2) > 79 < 85 THEN 'AP' " & _
                    "        WHEN  ROUND(AVG(Grade), 2) > 73 < 80 THEN 'D' " & _
